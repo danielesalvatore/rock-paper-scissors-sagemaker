@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './App/App';
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';
 import * as serviceWorker from './serviceWorker';
+
+import 'semantic-ui/dist/semantic.css'
+import './index.css';
+
+// configure AWS amplify
+Amplify.configure(awsconfig);
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -1,0 +1,14 @@
+{
+	"auth": {
+		"rockpaperscissorsdc2fe874": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"storage": {
+		"s3659f1939": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
