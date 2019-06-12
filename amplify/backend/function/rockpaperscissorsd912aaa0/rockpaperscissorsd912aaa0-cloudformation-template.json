@@ -63,7 +63,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "rock-paper-scissors-faosandbox-20190611125247-deployment",
-					"S3Key": "amplify-builds/rockpaperscissorsd912aaa0-1560331914-latest-build.zip"
+					"S3Key": "amplify-builds/rockpaperscissorsd912aaa0-1560356185-latest-build.zip"
 				}
 			}
 		},
