@@ -6,11 +6,18 @@ import Countdown from 'react-countdown-now';
 class WebcamCapture extends React.Component {
 
     state = {
-        imageSrc : null
+        imageSrc: null,
+        date: Date.now(),
+        countdownIsRunning: false
     };
 
     onPlay = () => {
-        this.countdown.getApi().start();
+
+        this.setState({
+            date: Date.now() + 2000,
+        }, () => {
+            this.countdown.getApi().start();
+        });
     };
 
     setCameraRef = webcam => {
@@ -24,39 +31,46 @@ class WebcamCapture extends React.Component {
     capture = () => {
         const imageSrc = this.webcam.getScreenshot();
 
+
         this.setState({
-            imageSrc
+            imageSrc,
+            countdownIsRunning: false
         });
     };
 
     render() {
         const videoConstraints = {
-            width: 1280,
-            height: 720,
-            facingMode: "user"
+            facingMode: "user",
         };
 
-        const {imageSrc}= this.state;
+        const {imageSrc, date, countdownIsRunning} = this.state;
 
         return (
             <>
                 <Countdown
-                    date={Date.now() + 3000}
+                    date={date}
                     ref={this.setCountdownRef}
                     onComplete={this.capture.bind(this)}
                     autoStart={false}
+                    onStart={() => this.setState({countdownIsRunning: true})}
                 />
+
                 <Webcam
-                    height={480}
-                    width={640}
+                    height="auto"
+                    width="100%"
                     audio={false}
                     ref={this.setCameraRef}
                     screenshotFormat="image/jpeg"
                     videoConstraints={videoConstraints}
                 />
-                <Button onClick={this.onPlay}>Play</Button>
+                <Button
+                    onClick={this.onPlay}
+                    loading={countdownIsRunning}
+                    size='huge'
+                    color='green'
+                >Play</Button>
 
-                <Image src={imageSrc} size='small' />
+                <Image src={imageSrc} size='small'/>
             </>
 
         );

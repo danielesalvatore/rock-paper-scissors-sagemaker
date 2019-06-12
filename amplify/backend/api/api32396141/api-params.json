@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/label",
+            "lambdaFunction": "rockpaperscissorsd912aaa0",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "api32396141",
+    "apiName": "api32396141",
+    "functionArns": [
+        {
+            "lambdaFunction": "rockpaperscissorsd912aaa0"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "rock-paper-scissors-faosandbox-20190611125247-authRole",
+        "unAuthRoleName": "rock-paper-scissors-faosandbox-20190611125247-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "rockpaperscissorsd912aaa0",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
