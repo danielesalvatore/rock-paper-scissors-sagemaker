@@ -5,7 +5,7 @@
   "dependencies": {
     "aws-amplify": "^1.1.28",
     "aws-amplify-react": "^2.3.8",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bops": "^1.0.0",
     "react": "^16.8.6",
     "react-countdown-now": "^2.1.0",
